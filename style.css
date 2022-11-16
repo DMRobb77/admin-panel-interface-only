@@ -61,7 +61,7 @@ h1, h2, h3, h4 {
     grid-column: 2;
     grid-row: 2;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr minmax(300px, 25%);
     grid-template-rows: 1fr;
     background-color: #cadbdb;
 }
@@ -204,7 +204,7 @@ h1, h2, h3, h4 {
     display: grid;
     grid-template-rows: 18rem;
     grid-auto-rows: 18rem;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
     gap: 2rem;
     margin: 1rem 2rem;
     padding-bottom: 5rem;
@@ -266,31 +266,54 @@ h1, h2, h3, h4 {
     grid-row: 1;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-rows: 4rem 1fr 4rem 1fr;
+    grid-template-rows: 4rem 28rem 4rem 1fr;
+    margin-right: 1rem;
+    height: 12rem;
 }
 
 .article-header{
     margin-left: 2rem;
+    padding-top: 1rem;
+    font-size: 18px;
 }
 
-.announce-header {
+.announce-section-header {
     grid-row: 1;
-    margin-top: 3rem;
+    padding-top: 1.3rem;
+    font-size: 18px;
 }
 
 .announcements {
-    grid-row: 2;
-    margin-right: 2rem;
+    grid-row: 2 / 3;
+    margin: 1rem 2rem 1rem 0;
     display: grid;
+    grid-template-rows: 7rem 1rem 7rem 1rem 7rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+.announcements hr {
+    width: 100%;
+}
+
+.announce-header {
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
 }
 
 .announce-tile {
-    background-color: white;
     width: 100%;
     border-radius: 8px;
+
 }
 
 .announce-tile div {
+    font-size: 14px;
+    height: 4rem;
+    line-clamp: 4;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -299,16 +322,23 @@ h1, h2, h3, h4 {
     grid-row: 3;
 }
 
+
 .trending {
     grid-row: 4;
+    background-color: white;
+    border-radius: 8px;
+    margin: 1rem 2rem 1rem 0;
 }
 
 .trending-tile {
-    border-radius: 8px;
-    background-color: white;
+    display: grid;
+    grid-template-rows: 4rem;
+    padding: 1rem 2rem;
 }
 
 .user-tile {
-
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
 }
 
